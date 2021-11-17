@@ -12,7 +12,7 @@ const NewsItem = (props)=> {
                         right: '0'
                     }
                     }> 
-                        <span className="badge rounded-pill bg-danger"> {source} </span>
+                        <span className="badge rounded-pill bg-danger text-white"> {source} </span>
                     </div>
                     <img src={!imageUrl ? "https://fdn.gsmarena.com/imgroot/news/21/08/xiaomi-smart-home-india-annoucnements/-476x249w4/gsmarena_00.jpg" : imageUrl} className="card-img-top" alt="..." />
                     <div className="card-body">
