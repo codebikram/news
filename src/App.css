@@ -1,8 +1,35 @@
-body{
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin&family=Poppins&family=Ubuntu&display=swap");
+body {
   margin: 0;
   padding: 0;
-  background-color:#e2e6ea;
+  font-family: "Poppins", sans-serif;
 }
-.nav-item{
+.nav-item {
   margin-right: 15px;
+}
+img:hover {
+  transform: scaleX(-1);
+}
+.card {
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 5px 10px 15px;
+}
+/* visited link */
+.btn:visited {
+  background-color: green;
+}
+/* mouse over link */
+.btn:hover {
+  background-color: black;
+}
+.card-title:hover{
+  font-weight: bold;
+  font-style: italic;
+
+}
+.descp:hover {
+  font-style: italic;
+
 }

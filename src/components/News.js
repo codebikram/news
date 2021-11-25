@@ -14,7 +14,6 @@ const News = (props) => {
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
-
     const updateNews = async () => {
         props.setProgress(10);
         const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
@@ -28,14 +27,11 @@ const News = (props) => {
         setLoading(false)
         props.setProgress(100);
     }
-
     useEffect(() => {
-        document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`;
+        document.title = `${capitalizeFirstLetter(props.category)} - NewsMania`;
         updateNews();
         // eslint-disable-next-line
     }, [])
-
-
     const fetchMoreData = async () => {
         const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page + 1}&pageSize=${props.pageSize}`;
         setPage(page + 1)
@@ -47,14 +43,16 @@ const News = (props) => {
 
     return (
         <>
-            <h1 className="text-center" style={{ margin: '35px 0px', marginTop: '90px' }}>NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines</h1>
+            <h2 className="text-center"
+                style={{ margin: '25px 0px', }}>
+                News<span className=" text-primary font-weight-bold">Mania</span> - Top <span className=" text-primary font-weight-bold">{capitalizeFirstLetter(props.category)}</span> Headlines
+                </h2>
             {loading && <Spinner />}
             <InfiniteScroll
                 dataLength={articles.length}
                 next={fetchMoreData}
                 hasMore={articles.length !== totalResults}
-                loader={<Spinner />}
-            >
+                loader={<Spinner />}>
                 <div className="container">
                     <div className="row">
                         {articles.map((element) => {
@@ -69,8 +67,6 @@ const News = (props) => {
     )
 
 }
-
-
 News.defaultProps = {
     country: 'in',
     pageSize: 8,
@@ -82,5 +78,4 @@ News.propTypes = {
     pageSize: PropTypes.number,
     category: PropTypes.string,
 }
-
-export default News
+export default News;
