@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  background-color: black;
 }
 .nav-item {
   margin-right: 15px;
@@ -14,7 +15,6 @@ img:hover {
   padding: 10px;
   border: 1px solid #ddd;
   background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.35) 5px 10px 15px;
 }
 /* visited link */
 .btn:visited {
@@ -22,14 +22,19 @@ img:hover {
 }
 /* mouse over link */
 .btn:hover {
-  background-color: black;
+  background-color: blue;
 }
-.card-title:hover{
+
+.card-title:hover {
   font-weight: bold;
   font-style: italic;
-
 }
 .descp:hover {
   font-style: italic;
+}
+.card:hover{
+  box-shadow: rgba(158, 154, 154, 0.35) 5px 8px 12px;
+  transform: scale(1.03);
+  transition: all 1s ease;
 
 }

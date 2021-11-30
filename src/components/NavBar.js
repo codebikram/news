@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link, useLocation } from "react-router-dom";
-import logo from './newslogo.png';
+import logo from './newspic.png';
 
 const NavBar = (props) => {
     const location = useLocation();
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-                <div className="ml-3 mr-2">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+                <div className="">
                     <img src={logo} alt="NM" height="50px" />
                 </div>
                 <Link className="navbar-brand" to="/">{props.title}

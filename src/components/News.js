@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-
 import NewsItem from './NewsItem'
 import Spinner from './Spinner';
 import PropTypes from 'prop-types'
 import InfiniteScroll from "react-infinite-scroll-component";
+import earthlogo from './earthlogo.png'
 
 const News = (props) => {
     const [articles, setArticles] = useState([])
@@ -15,7 +15,7 @@ const News = (props) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
     const updateNews = async () => {
-        props.setProgress(10);
+        props.setProgress(5);
         const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
         setLoading(true)
         let data = await fetch(url);
@@ -43,17 +43,18 @@ const News = (props) => {
 
     return (
         <>
-            <h2 className="text-center"
+            <h2 className="text-center text-white"
                 style={{ margin: '25px 0px', }}>
+                <img src={earthlogo} alt="earth" height="40px" className="mr-2"/>
                 News<span className=" text-primary font-weight-bold">Mania</span> - Top <span className=" text-primary font-weight-bold">{capitalizeFirstLetter(props.category)}</span> Headlines
-                </h2>
+            </h2>
             {loading && <Spinner />}
             <InfiniteScroll
                 dataLength={articles.length}
                 next={fetchMoreData}
                 hasMore={articles.length !== totalResults}
                 loader={<Spinner />}>
-                <div className="container">
+                <div className="container text-white">
                     <div className="row">
                         {articles.map((element) => {
                             return <div className="col-md-4" key={element.url}>
