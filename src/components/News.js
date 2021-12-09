@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import NewsItem from './NewsItem'
+import React, { useEffect, useState } from 'react';
+import NewsItem from './NewsItem';
 import Spinner from './Spinner';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import InfiniteScroll from "react-infinite-scroll-component";
-import earthlogo from './earthlogo.png'
+import earthlogo from './earthlogo.png';
 
 const News = (props) => {
-    const [articles, setArticles] = useState([])
-    const [loading, setLoading] = useState(true)
-    const [page, setPage] = useState(1)
-    const [totalResults, setTotalResults] = useState(0)
+    const [articles, setArticles] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [page, setPage] = useState(1);
+    const [totalResults, setTotalResults] = useState(0);
 
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -43,9 +43,9 @@ const News = (props) => {
 
     return (
         <>
-            <h2 className="text-center text-white"
+            <h2 className="text-center text-white mb-5"
                 style={{ margin: '25px 0px', }}>
-                <img src={earthlogo} alt="earth" height="40px" className="mr-2"/>
+                <img src={earthlogo} alt="earth" height="40px" className="earth mr-2"/>
                 News<span className=" text-primary font-weight-bold">Mania</span> - Top <span className=" text-primary font-weight-bold">{capitalizeFirstLetter(props.category)}</span> Headlines
             </h2>
             {loading && <Spinner />}
@@ -58,7 +58,10 @@ const News = (props) => {
                     <div className="row">
                         {articles.map((element) => {
                             return <div className="col-md-4" key={element.url}>
-                                <NewsItem title={element.title ? element.title : ""} description={element.description ? element.description : ""} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
+                                <NewsItem title={element.title ? element.title.slice(0,50) : ""} 
+                                description={element.description ? element.description.slice(0,90) : ""} 
+                                imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} 
+                                date={element.publishedAt} source={element.source.name} />
                             </div>
                         })}
                     </div>

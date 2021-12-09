@@ -15,8 +15,8 @@ const App = () => {
       <Router>
         <NavBar title="News" end="Mania" />
         <LoadingBar
-          height={3}
-          color='#f11946'
+          height={4}
+          color='#007bff'
           progress={progress}
         />
         <Switch>
@@ -32,7 +32,5 @@ const App = () => {
       </Router>
     </>
   )
-
 }
-
 export default App;

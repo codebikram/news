@@ -8,13 +8,11 @@ body {
 .nav-item {
   margin-right: 15px;
 }
-img:hover {
-  transform: scaleX(-1);
-}
 .card {
   padding: 10px;
   border: 1px solid #ddd;
-  background-color: #fff;
+  box-shadow: 3px 3px 10px rgba(163, 155, 155, 0.35);
+  border-radius: 10px;
 }
 /* visited link */
 .btn:visited {
@@ -24,17 +22,20 @@ img:hover {
 .btn:hover {
   background-color: blue;
 }
-
-.card-title:hover {
-  font-weight: bold;
-  font-style: italic;
-}
-.descp:hover {
-  font-style: italic;
-}
-.card:hover{
-  box-shadow: rgba(158, 154, 154, 0.35) 5px 8px 12px;
-  transform: scale(1.03);
+.card:hover {
+  box-shadow: 5px 8px 20px rgba(163, 155, 155, 0.35);
+  transform: scale(1.07);
   transition: all 1s ease;
-
+  cursor: pointer;
+}
+.earth:hover{
+  transform: scale(1.5);
+  transition: all 1s ease;
+}
+.card img{
+  width: 100%;
+  height: 150px;
+}
+.card-body{
+  height:310px;
 }
