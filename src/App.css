@@ -14,11 +14,9 @@ body {
   box-shadow: 3px 3px 10px rgba(163, 155, 155, 0.35);
   border-radius: 10px;
 }
-/* visited link */
 .btn:visited {
   background-color: green;
 }
-/* mouse over link */
 .btn:hover {
   background-color: blue;
 }
@@ -34,32 +32,13 @@ body {
 }
 .card img {
   width: 100%;
-  height: 150px;
+  height: 165px;
 }
 .card-body {
   height: 310px;
 }
-
-/* Small devices (landscape phones, 576px and up) */
-@media (max-width: 576px) {
-
-
-}
-/* Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) {
-  .card-body{
+  .card-body {
     height: 456px;
   }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
 }
